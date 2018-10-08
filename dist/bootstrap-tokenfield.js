@@ -629,7 +629,8 @@
     }
 
   , change: function (e) {
-      if ( e.initiator === 'tokenfield' ) return // Prevent loops
+    if (e.initiator === 'tokenfield') return; // Prevent loops
+    if (!e.initiator) return; // Prevent loops
 
       this.setTokens( this.$element.val() )
     }
